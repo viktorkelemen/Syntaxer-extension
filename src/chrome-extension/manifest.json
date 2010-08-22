@@ -1,0 +1,32 @@
+{
+  "name": "Syntaxer",
+  "version": "0.1",
+  "description": "Syntaxer",
+  "content_scripts": [
+      {
+        "matches": ["http://*/*.js*",
+                    "file://*/*.js*",
+                    "http://*/*.css*",
+                    "file://*/*.css*",
+                    "http://*/*.php*",
+                    "file://*/*.php*",
+                    "http://*/*.py*",
+                    "file://*/*.py*",
+                    "http://*/*.rb*",
+                    "file://*/*.rb*",
+                    "http://*/*.xml*",
+                    "file://*/*.xml*"
+        ],
+        "js": ["sh_main.js",
+               "lang/sh_javascript.min.js",
+               "lang/sh_css.min.js",
+               "lang/sh_php.min.js",
+               "lang/sh_python.min.js",
+               "lang/sh_ruby.min.js",
+               "lang/sh_xml.min.js",
+               "jquery-1.4.2.min.js",
+               "syntaxer-chrome.js"],
+        "css": ["sh_style.css"]
+      }
+  ]
+}
