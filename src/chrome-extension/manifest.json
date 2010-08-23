@@ -1,6 +1,6 @@
 {
   "name": "Syntaxer",
-  "version": "0.3",
+  "version": "0.5",
   "description": "Syntaxer",
   "content_scripts": [{
         "matches": ["http://*/*.js*",
