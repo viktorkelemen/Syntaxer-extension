@@ -4,19 +4,26 @@
     /**
      * Beautifies the JavaScript source
      */
-    function preProcessJavaScript() {
+    function preProcessJavaScript(target) {
 
-        var source = $("body pre").html();
+        var source = target.innerHTML;
         source = js_beautify(source);
-        $("body pre").html(source);
+        target.innerHTML = source;
     }
 
-
+    // currently supported languages
     var EXPS = {
         "lang-js": /\.js/,
         "lang-css": /\.css/
     };
+    
+    // get the pre element
+    var pres = document.body.getElementsByTagName("pre"),
+        target;
 
+    if (pres.length > 0) {
+        target = pres[0];
+    }
 
     // selecting the className
     var path = window.location.pathname,
@@ -34,11 +41,10 @@
     if (EXPS["lang-js"].test(path)) {
 
         // beautifier
-        preProcessJavaScript();
+        preProcessJavaScript(target);
     }
 
-
-    $("body pre").addClass(className);
+    target.className = className;
 
     prettyPrint();
 
