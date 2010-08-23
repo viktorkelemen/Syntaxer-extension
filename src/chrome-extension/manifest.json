@@ -1,6 +1,6 @@
 {
   "name": "Syntaxer",
-  "version": "0.2",
+  "version": "0.3",
   "description": "Syntaxer",
   "content_scripts": [{
         "matches": ["http://*/*.js*",
@@ -8,12 +8,12 @@
                     "http://*/*.css*",
                     "file://*/*.css*"
         ],
-        "js": ["sh_main.js",
-               "lang/sh_javascript.min.js",
-               "lang/sh_css.min.js",
+        "js": ["prettify/prettify.js",
+               "prettify/lang/lang-css.js",
                "jquery-1.4.2.min.js",
-               "syntaxer-chrome.js"],
-        "css": ["sh_style.css"]
+               "syntaxer-chrome.js"
+        ],
+        "css": ["prettify/prettify.css"]
     }],
     "icons": {
         "16": "icon_16.png",

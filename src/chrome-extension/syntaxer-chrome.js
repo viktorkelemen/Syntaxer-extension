@@ -3,29 +3,26 @@ $( function () {
         
         
     var EXPS = {
-        "sh_javascript": /\.js/,
-        "sh_css": /\.css/,
-        "sh_php": /\.php/,
-        "sh_python": /\.py/,
-        "sh_ruby": /\.rb/,
-        "sh_xml": /\.xml/
+        "lang-js": /\.js/,
+        "lang-css": /\.css/
     };
-        
-    var path = window.location.pathname,
-        className = "",
-        key;
 
+    // selecting the className
+    var path = window.location.pathname,
+        className = "prettyprint",
+        key;
+    
     for (key in EXPS) {
         
         if (EXPS[key].test(path)) {
-            className = key;
+            className += " " + key;
             break;
         }
     }
         
+    
     $("body pre").addClass(className);
 
-    // slooow
-    SHJS.highlight();
+    prettyPrint();
 
 });
